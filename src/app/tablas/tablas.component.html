@@ -1,0 +1,76 @@
+
+<h1 class="container bg-dark text-white text-center my-4 py-4">Uso de  ngIf  </h1>
+<div class="container">
+  <button class="btn btn-dark mb-3" (click)="variablexdxd=!variablexdxd" >Accion IF </button>
+  <button class="btn btn-warning mb-3" (click)= "variablexdxd2=!variablexdxd2"> Accion Else  </button>
+  <button class= "btn btn-dark mb-3" (click)="fondo= 'bg-dark'"> CambiaFondo</button>
+  <p>Mostrando :  variablexdxd = {{variablexdxd}}</p>
+  <p class="text-info" *ngIf="variablexdxd">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam neque magni, placeat mollitia 
+    esse eum optio labore, laborum beatae, numquam culpa nesciunt facere accusantium repellendus! 
+    Vitae, quidem illum! Alias, maxime.
+  </p>
+
+  <p class="text-danger" [ngClass]="fondo"> 
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora voluptatem obcaecati dolorem
+     quis veniam et expedita sit fugit a nulla sequi maiores deleniti, fugiat beatae eaque reprehenderit
+      placeat nesciunt at.
+  </p>
+
+</div>
+
+<div class ="container">
+  
+  <p>mostrando variablexdxd2 = {{variablexdxd2}}</p>
+  <p class="text-info" *ngIf="variablexdxd2; Else variablexdxd2DelTemplate">
+    Else Esto es una prueba Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam neque magni, placeat mollitia 
+    esse eum optio labore, laborum beatae, numquam culpa nesciunt facere accusantium repellendus! 
+    Vitae, quidem illum! Alias, maxime.
+  </p>
+  <ng-template #variablexdxd2DelTemplate>
+      <p class="text-body" > 
+          Else Esto es una prueba  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora voluptatem obcaecati dolorem
+          quis veniam et expedita sit fugit a nulla sequi maiores deleniti, fugiat beatae eaque reprehenderit
+          placeat nesciunt at.
+      </p>
+  </ng-template>
+  
+</div>
+
+   
+
+<div class = "container"> 
+    <h1 class="container bg-dark text-white text-center my-4 py-4">Uso de ngFor  - Tablas  </h1>
+
+    <ul>
+      <li *ngFor="let curso of ListaCursos" > {{curso}} </li>
+    </ul>
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th scope="col ">#</th>
+          <th scope="col ">SEXO</th>
+          <th scope="col ">NOMBRES</th>
+          <th scope="col ">EDAD</th>
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let animal of ListaAnimales; index as i"  >
+          <th scope="row">{{i+1}}}</th>         
+          <td>{{animal.tipo}}</td>
+          <td>{{animal.nombre}}</td>
+          <td>{{animal.edad}}</td>
+        </tr>
+
+     
+        
+      </tbody>
+
+      
+    </table>
+
+
+
+</div>

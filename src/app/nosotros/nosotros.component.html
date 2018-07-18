@@ -1,0 +1,41 @@
+<div class="mt-2">
+<h2>Nosotros</h2>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure eligendi tenetur aperiam, nam velit magni officia repellendus quas optio. Minus, amet quos aliquam nemo quaerat vitae voluptatum ea! Culpa, velit?</p>
+
+</div>
+
+
+<div class = "container mt-1"> 
+        <table class="table">    
+          <thead>
+            <tr>
+              <th scope="col ">#</th>
+              <th scope="col ">NOMBRE</th>
+              <th scope="col ">ESPECIALIDAD</th>
+              <th scope="col ">DESCRIPCION</th>
+            </tr>
+    
+          </thead>
+          <tbody> 
+            <tr *ngFor="let item of obtequipo, index as i"  >
+              <th scope="row">{{i+1}}}</th>         
+              <td>{{item.nombre}}</td>
+              <td>{{item.especialidad}}</td>
+              <td>{{item.descripcion}}</td>
+            </tr>  
+          </tbody>  
+        </table>       
+    </div>
+
+    <div clas="mt-5">
+            <ul class="list-group">
+                    <li class="list-group-item" routerLinkActive="active" *ngFor="let item of obtequipo, index as i">
+                            <h6> nombre: {{item.nombre}}</h6>
+                            <h6> Especialidad: {{item.especialidad}}</h6>
+                            <a [routerLink]="['/equipo',i]" >Leer mas..."</a>
+                    
+                    </li>        
+            </ul>
+    </div>
+
+
